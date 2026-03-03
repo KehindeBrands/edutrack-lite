@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini School Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>EduTrack Lite</h2>
+        <p>Mini School System</p>
+
+        <button id="toggleTheme"><img src="./interface.png" alt=""> Dark/Light Mode</button>
+
+        <nav>
+            <ul>
+                <li>Dashboard</li>
+                <li>Results</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="school-header">
+            <h1>Royal International School</h1>
+            <p>Student Performance Dashboard</p>
+        </header>
+
+        <!-- Student Info -->
+        <section class="card">
+            <h3>Student Information</h3>
+
+            <label>Student Name</label>
+            <input type="text" id="studentName">
+
+            <label>Class</label>
+            <select id="studentClass">
+                <option value="">Select Class</option>
+                <option>JSS1</option>
+                <option>JSS2</option>
+                <option>JSS3</option>
+                <option>SS1</option>
+                <option>SS2</option>
+                <option>SS3</option>
+            </select>
+
+            <label>Term</label>
+            <select id="studentTerm">
+                <option value="">Select Term</option>
+                <option>Term 1</option>
+                <option>Term 2</option>
+                <option>Term 3</option>
+            </select>
+        </section>
+
+        <!-- Add Subject -->
+        <section class="card">
+            <h3>Add Subject & Score</h3>
+
+            <label>Subject</label>
+<select id="subject">
+    <option value="">Select Subject</option>
+    <option>Mathematics</option>
+    <option>English</option>
+    <option>Biology</option>
+    <option>Chemistry</option>
+    <option>Physics</option>
+    <option>Government</option>
+    <option>Economics</option>
+    <option>Computer Science</option>
+    <option>Civic Education</option>
+    <option>Geography</option>
+</select>
+
+            <label>Score</label>
+            <input type="number" id="score" min="0" max="100" step="1" placeholder="0-100">
+
+            <button id="addBtn">Add Subject</button>
+        </section>
+
+        <!-- Results -->
+        <section class="card">
+            <h3>Results</h3>
+
+           <table>
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Class</th>
+            <th>Term</th>
+            <th>Subject</th>
+            <th>Score</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+
+    <tbody id="resultBody">
+        <!-- JavaScript will insert rows here -->
+    </tbody>
+</table>
+<div id="reportCard" class="report-card">
+    <h2>Student Report Card</h2>
+    <p><strong>Name:</strong> <span id="reportName"></span></p>
+    <p><strong>Class:</strong> <span id="reportClass"></span></p>
+    <p><strong>Term:</strong> <span id="reportTerm"></span></p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Score</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody id="reportTableBody"></tbody>
+    </table>
+
+    <div class="report-summary">
+        <p>Total: <span id="reportTotal"></span></p>
+        <p>Average: <span id="reportAverage"></span></p>
+        <p>Remark: <span id="reportRemark"></span></p>
+    </div>
+</div>
+            <div class="summary">
+                <p>Total: <span id="totalScore">0</span></p>
+                <p>Average: <span id="averageScore">0</span></p>
+                <p>Remark: <span id="finalRemark">-</span></p>
+            </div>
+
+            <button id="clearBtn">Clear All</button>
+
+            <button id="printBtn">Generate Report Card</button>
+
+            <section class="card">
+    <h3>Performance Chart</h3>
+    <canvas id="performanceChart"></canvas>
+</section>
+        </section>
+
+    </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>

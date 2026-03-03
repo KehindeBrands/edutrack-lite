@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 230px;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar button {
+    margin: 15px 0;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    background: #1abc9c;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+.main-content {
+    flex: 1;
+    background: #ecf0f1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.school-header {
+    text-align: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card input,
+.card select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0 15px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#addBtn {
+    padding: 10px;
+    background: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#clearBtn {
+    margin-top: 15px;
+    padding: 10px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+}
+
+thead {
+    background: #f4f4f4;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table th, table td {
+    
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.summary p {
+    margin: 6px 0;
+    font-weight: bold;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #1c1c1c;
+    color: white;
+}
+
+body.dark-mode .main-content {
+    background: #1c1c1c;
+}
+
+body.dark-mode .card {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+.report-card {
+    display: none;
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+}
+
+.report-summary {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* PRINT STYLE */
+@media print {
+
+    body * {
+        visibility: hidden;
+    }
+
+    .report-card, .report-card * {
+        visibility: visible;
+    }
+
+    .report-card {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}
+canvas {
+    margin-top: 15px;
+}
+
+#performanceChart {
+    width: 100% !important;
+    height: 300px !important;
+}
